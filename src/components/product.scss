@@ -1,0 +1,14 @@
+.product {
+  border: 1px solid black;
+  padding: 15px;
+  display: flex;
+  flex-direction: column;
+
+  .productHelper {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+  }
+
+  margin-bottom: 10px;
+}

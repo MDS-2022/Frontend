@@ -1,0 +1,35 @@
+.item {
+  display: flex;
+  flex-direction: row;
+
+  align-items: center;
+  justify-items: center;
+  justify-self: center;
+  justify-content: space-around;
+
+  border: 1px solid #707070;
+  border-radius: 5px;
+  padding: 5px;
+  margin: 5px;
+
+  .quantity {
+    .icon_remove {
+      background-color: #707070;
+      width: 30px;
+      height: 30px;
+      margin-right: 10px;
+    }
+
+    .icon_add {
+      background-color: #707070;
+      width: 30px;
+      height: 30px;
+      margin-left: 10px;
+    }
+  }
+
+  .quantity > input {
+    width: 50px;
+    text-align: center;
+  }
+}

@@ -1,0 +1,11 @@
+.updateProductForm {
+  display: flex;
+  .form {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .form > label > input {
+    margin-left: 5px;
+  }
+}

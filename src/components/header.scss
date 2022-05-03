@@ -1,0 +1,27 @@
+.header {
+  display: flex;
+  align-self: flex-end;
+  padding-right: 30px;
+  background-color: #FFFFFF;
+  height: 50px;
+
+  .button {
+    margin: 10px;
+  }
+
+  .language {
+    display: flex;
+    flex-direction: row;
+    align-self: center;
+
+    .lg {
+      margin: 6px;
+    }
+  }
+
+  .auth {
+    display: flex;
+    flex-direction: column;
+    margin-left: 10px;
+  }
+}
