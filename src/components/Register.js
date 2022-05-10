@@ -1,11 +1,13 @@
 import React, {useState} from 'react'
-import {ReactComponent} from '../Tree_swing.svg'
+import {ReactComponent} from '../Logo.svg'
 import axios from "axios";
 import {Link} from "react-router-dom";
 import "./register.scss"
+import {useNavigate } from "react-router-dom";
 
 const Register = (props) => {
 
+    const navigate = useNavigate()
     const[state, setState] = useState({"username" : "", "email": "", "password" : ""})
 
     const handleFormSubmit = async (e) => {
@@ -13,14 +15,14 @@ const Register = (props) => {
 
         await axios({
             method: 'POST',
-            url: 'http://localhost/api/users/register',
-            data: {
+            url: 'http://34.125.21.171:5000/user',
+            params: {
                 "username" : state.username,
                 "email" : state.email,
                 "password" : state.password
             }
         }).then((response) => {
-            props.history.push("/login");
+            navigate("/login");
             console.log(response);
         }, (error) => {
             console.log(error);
@@ -31,7 +33,7 @@ const Register = (props) => {
     return (
         <div className="Register">
             <div className="left">
-                <p className="siteName">FARMACY</p>
+                <p className="siteName">Online Library</p>
                 <ReactComponent className="img"/>
             </div>
             <div className="register_form">

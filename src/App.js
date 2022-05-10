@@ -1,5 +1,5 @@
 import './App.css';
-import {HashRouter, Routes, Route, Switch, useRoutes} from "react-router-dom";
+import {HashRouter, Route, Switch, useRoutes} from "react-router-dom";
 //import Footer from "./components/Footer";
 import Register from "./components/Register";
 import Login from "./components/Login";

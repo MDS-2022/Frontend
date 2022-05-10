@@ -1,33 +1,34 @@
 import React, {useState} from 'react'
-import {ReactComponent} from "../Tree_swing.svg";
+import {ReactComponent} from "../Logo.svg";
 import axios from 'axios';
 import './login.scss'
 import {Link} from "react-router-dom";
+import {useNavigate } from "react-router-dom";
 
 const Login = (props) => {
     const[state, setState] = useState({"username": "", "password" : ""})
-
+    const navigate = useNavigate()
     const handleFormSubmit = async (e) => {
         e.preventDefault();
-
         await axios({
-            method: 'POST',
-            url: 'http://localhost/api/users/login',
-            data: {
+            method: 'GET',
+            url: 'http://34.125.21.171:5000/user',
+            params: {
                 "username" : state.username,
                 "password" : state.password
             }
         }).then((response) => {
+            console.log(response.data);
             localStorage.setItem("token", response.data.token);
-            localStorage.setItem("username", response.data.username);
-            localStorage.setItem("role", response.data.role);
+            localStorage.setItem("username", response.data["user"]["username"]);
+            localStorage.setItem("role", response.data["user"]["isAdmin"]);
             localStorage.setItem("shoppingCart", "");
             localStorage.setItem("tabPrincipal", 0);
             localStorage.setItem("tabAdm", 0);
             localStorage.setItem("tabChat", 0);
             //0 - EN; 1 - RO
             localStorage.setItem("language", 0);
-            props.history.push("/loggedin");
+            navigate("/loggedin");
             console.log(response);
             }, (error) => {
                 console.log(error);
@@ -37,7 +38,7 @@ const Login = (props) => {
     return (
             <div className="Login">
                 <div className="left">
-                    <p className="siteName">FARMACY</p>
+                    <p className="siteName"><Link to='/'/>Online Library</p>
                     <ReactComponent className="img"/>
                 </div>
                 <div className="login_form">
