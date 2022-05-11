@@ -3,10 +3,12 @@ import './product.scss'
 import axios from "axios";
 import UpdateProductForm from "./UpdateProductForm";
 
+
+
 const Product = (props) => {
     const [state, setState] = useState(false)
     const deleteProduct = async () => {
-        const url = 'http://localhost/api/products/' + props.id;
+        const url = 'http://34.125.21.171:5000/book' + props.remote_id;
         await axios({
             method: 'DELETE',
             url: url,
@@ -26,43 +28,35 @@ const Product = (props) => {
         console.log("update product");
     }
 
-    const addToCart = () => {
-        if (localStorage.getItem("shoppingCart") === "") {
-            localStorage.setItem("shoppingCart", props.id.toString())
-        } else {
-            localStorage.setItem("shoppingCart", localStorage.getItem("shoppingCart") + " " + props.id.toString())
-        }
-        console.log("add to cart");
+    function visitPage(){
+        let drive;
+        drive = "https://drive.google.com/file/d/" + props.remote_id + "/view";
+        window.location = drive;
     }
-
-    if (localStorage.getItem("role") === 'ADMIN' ||
-        localStorage.getItem("role") === 'MANAGER') {
+    console.log(props);
+    if (localStorage.getItem("role") === "1") {
         if (state) {
             return (
-                <div key={props.id} className='product'>
+                <div key={props.name} className='product'>
                     <div className='productHelper'>
                         <p>{props.name}</p>
-                        <p>{parseInt(localStorage.getItem("language")) === 0 ? "Price" : "Pret"}: {props.price}</p>
-                        <p>{parseInt(localStorage.getItem("language")) === 0 ? "Quantity" : "Cantitate"}: {props.quantity}</p>
-                        <p>{props.description}</p>
+                        <p>{props.author}</p>
                         <div className='buttons'>
                             <button className='button' type="button" onClick={deleteProduct}>
                                 {parseInt(localStorage.getItem("language")) === 0 ? "Delete Product" : "Elimina produs"}
                             </button>
                         </div>
                     </div>
-                    <UpdateProductForm name={props.name} price={props.price} quantity={props.quantity} description={props.description} id={props.id}/>
+                    <UpdateProductForm name={props.name} author={props.author}/>
                 </div>
             );
         }
 
         return (
-            <div key={props.id} className='product'>
+            <div key={props.name} className='product'>
                 <div className='productHelper'>
                     <p>{props.name}</p>
-                    <p>{parseInt(localStorage.getItem("language")) === 0 ? "Price" : "Pret"}: {props.price}</p>
-                    <p>{parseInt(localStorage.getItem("language")) === 0 ? "Quantity" : "Cantitate"}: {props.quantity}</p>
-                    <p>{props.description}</p>
+                    <p>{props.author}</p>
                     <div className='buttons'>
                         <button className='button' type="button" onClick={deleteProduct}>
                             {parseInt(localStorage.getItem("language")) === 0 ? "Delete Product" : "Elimina produs"}
@@ -76,14 +70,13 @@ const Product = (props) => {
         );
     }
     return (
-        <div key={props.id} className='product'>
+        <div key={props.name} className='product'>
             <div className='productHelper'>
                 <p>{props.name}</p>
-                <p>{parseInt(localStorage.getItem("language")) === 0 ? "Price" : "Pret"}: {props.price}</p>
-                <p>{props.description}</p>
+                <p>{props.author}</p>
                 <div className='buttons'>
-                    <button className='button' type="button" onClick={addToCart}>
-                        {parseInt(localStorage.getItem("language")) === 0 ? "Add to Cart" : "Adauga in cos"}
+                    <button className='button' type="button"
+                            onClick={visitPage}>as
                     </button>
                 </div>
             </div>

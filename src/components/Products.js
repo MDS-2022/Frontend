@@ -10,13 +10,13 @@ const Products = (props) => {
         //console.log(localStorage.getItem("token"))
         await axios({
             method: 'GET',
-            url: 'http://localhost/api/products',
+            url: 'http://34.125.21.171:5000/book',
             headers: {
                 'Authorization': 'Bearer '+ localStorage.getItem("token")
             }
         }).then((response) => {
-            const lst = response.data.map(obj => ({id: obj.id, name: obj.name, price: obj.price,
-                description: obj.description, quantity: obj.quantity}));
+            const lst = response.data["books"].map(obj => ({name: obj.name,
+                author: obj.author, remote_id: obj.remote_id}));
             setState({"products" : lst})
         }, (error) => {
             console.log(error);
@@ -30,7 +30,7 @@ const Products = (props) => {
     return (
         <div className='products'>
             {state.products.map(prod => {
-                return <Product id={prod.id.toString()} quantity={prod.quantity.toString()} name={prod.name.toString()} price={prod.price.toString()} description={prod.description.toString()}/>
+                return <Product name={prod.name.toString()} author={prod.author.toString()} remote_id={prod.remote_id.toString()} />
             })}
         </div>
     );

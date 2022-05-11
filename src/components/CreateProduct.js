@@ -34,7 +34,7 @@ const CreateProduct = (props) => {
                 <label>{parseInt(localStorage.getItem("language")) === 0 ? "Name" : "Nume"}: <input required name="Name" placeholder={props.name} onChange={e => setState({...state, name: e.target.value})} value={state.name}/></label>
                 <label>{parseInt(localStorage.getItem("language")) === 0 ? "Price" : "Pret"}: <input required name="Price" placeholder={props.price} onChange={e => setState({...state, price: e.target.value})} value={state.price}/></label>
                 <label>{parseInt(localStorage.getItem("language")) === 0 ? "Quantity" : "Cantitate"}: <input required name="Quantity" placeholder={props.quantity} onChange={e => setState({...state, quantity: e.target.value})} value={state.quantity}/></label>
-                <label>{parseInt(localStorage.getItem("language")) === 0 ? "Description" : "Descriere"}: <input required name="Description" placeholder={props.description} onChange={e => setState({...state, description: e.target.value})} value={state.description}/></label>
+                <label>{parseInt(localStorage.getItem("language")) === 0 ? "Description" : "Descriere"}: <input required name="Description" placeholder={props.description} onChange={e => setState({...state, author: e.target.value})} value={state.description}/></label>
                 <button type="submit">{parseInt(localStorage.getItem("language")) === 0 ? "Create" : "Adauga"}</button>
             </form>
         </div>

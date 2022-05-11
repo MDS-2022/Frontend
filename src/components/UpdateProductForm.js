@@ -39,7 +39,7 @@ const UpdateProductForm = (props) => {
                 <label>{parseInt(localStorage.getItem("language")) === 0 ? "Quantity" : "Cantitate"}:
                     <input required name="Quantity" placeholder={props.quantity} onChange={e => setState({...state, quantity: e.target.value})} value={state.quantity}/></label>
                 <label>{parseInt(localStorage.getItem("language")) === 0 ? "Description" : "Descriere"}:
-                    <input required name="Description" placeholder={props.description} onChange={e => setState({...state, description: e.target.value})} value={state.description}/></label>
+                    <input required name="Description" placeholder={props.description} onChange={e => setState({...state, author: e.target.value})} value={state.description}/></label>
                 <button type="submit">{parseInt(localStorage.getItem("language")) === 0 ? "Update" : "Actualizeaza produs"}</button>
             </form>
         </div>
