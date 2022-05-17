@@ -1,18 +1,57 @@
 .FirstPage {
-  padding: 15px 32px;
+  //padding: 15px 32px;
   position: fixed;
   left: 0;
   right: 0;
   width: 100%;
 
-  .lander {
-    float: left;
-    width: 50%;
+
+  @media screen and (min-width: 1330px) {
+    .imgLogo{
+      display: none;
+    }
+    .img {
+      float: left;
+      width: 50%;
+    }
+
+    .lander {
+      float: left;
+      width: 50%;
+    }
+  }
+  @media (min-width: 660px) and (max-width: 1331px) {
+    .imgLogo{
+      display: none;
+    }
+    .img {
+      position: fixed;
+      float: left;
+      width: 240px;
+    }
+
+    .lander {
+      position: fixed;
+      margin-left: 385px;
+      float: left;
+      //width: 50%;
+    }
+  }
+  @media screen and (max-width: 659px) {
+    .imgLogo{
+      float: left;
+      display: contents;
+      align-content: center;
+    }
+    .img {
+      display: none;
+    }
+    .lander {
+      float: left;
+      display: contents;
+      align-content: center;
+    }
   }
 
-  .img {
-    float: left;
-    width: 50%;
-  }
 }
 

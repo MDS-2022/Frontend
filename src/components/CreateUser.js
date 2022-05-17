@@ -9,11 +9,11 @@ const CreateUser = (props) => {
 
         await axios({
             method: 'POST',
-            url: 'http://localhost/api/users',
+            url: 'http://34.125.21.171:5000/user',
             headers: {
                 'Authorization': 'Bearer ' + localStorage.getItem("token")
             },
-            data: {
+            params: {
                 "username" : state.username,
                 "email" : state.email,
                 "password" : state.password

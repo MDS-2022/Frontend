@@ -6,9 +6,7 @@ import Tabs from '@material-ui/core/Tabs';
 import Tab from '@material-ui/core/Tab';
 import Typography from '@material-ui/core/Typography';
 import Box from '@material-ui/core/Box';
-import Users from "./Users";
 import CreateUser from "./CreateUser";
-import Charts from "./Charts";
 
 function TabPanel(props) {
     const { children, value, index, ...other } = props;
@@ -64,19 +62,11 @@ const Administration = (props) => {
             <div className={classes.root}>
                 <AppBar position="static">
                     <Tabs value={value} onChange={handleChange} aria-label="simple tabs example">
-                        <Tab label={parseInt(localStorage.getItem("language")) === 0 ? "Users" : "Utilizatori"} {...a11yProps(0)} />
                         <Tab label={parseInt(localStorage.getItem("language")) === 0 ? "Create User" : "Adauga utilizator"} {...a11yProps(1)} />
-                        <Tab label={parseInt(localStorage.getItem("language")) === 0 ? "Charts" : "Grafice"} {...a11yProps(2)} />
                     </Tabs>
                 </AppBar>
                 <TabPanel value={value} index={0}>
-                    <Users/>
-                </TabPanel>
-                <TabPanel value={value} index={1}>
                     <CreateUser/>
-                </TabPanel>
-                <TabPanel value={value} index={2}>
-                    <Charts/>
                 </TabPanel>
             </div>
         </div>

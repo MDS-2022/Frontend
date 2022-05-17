@@ -1,8 +1,6 @@
 import React, {useState} from 'react'
 import './product.scss'
 import axios from "axios";
-import UpdateProductForm from "./UpdateProductForm";
-
 
 
 const Product = (props) => {
@@ -14,6 +12,10 @@ const Product = (props) => {
             url: url,
             headers: {
                 'Authorization': 'Bearer ' + localStorage.getItem("token")
+            },
+            params:{
+                "author": props.author,
+                "name": props.name,
             }
         }).then((response) => {
             console.log("delete");
@@ -23,46 +25,25 @@ const Product = (props) => {
         })
     }
 
-    const updateProduct = () => {
-        setState(true);
-        console.log("update product");
-    }
-
-    function visitPage(){
+    function visitPage() {
         let drive;
         drive = "https://drive.google.com/file/d/" + props.remote_id + "/view";
         window.location = drive;
     }
+
     console.log(props);
     if (localStorage.getItem("role") === "1") {
-        if (state) {
-            return (
-                <div key={props.name} className='product'>
-                    <div className='productHelper'>
-                        <p>{props.name}</p>
-                        <p>{props.author}</p>
-                        <div className='buttons'>
-                            <button className='button' type="button" onClick={deleteProduct}>
-                                {parseInt(localStorage.getItem("language")) === 0 ? "Delete Product" : "Elimina produs"}
-                            </button>
-                        </div>
-                    </div>
-                    <UpdateProductForm name={props.name} author={props.author}/>
-                </div>
-            );
-        }
-
         return (
             <div key={props.name} className='product'>
                 <div className='productHelper'>
                     <p>{props.name}</p>
                     <p>{props.author}</p>
                     <div className='buttons'>
+                        <button className='button' type="button"
+                                onClick={visitPage}>{parseInt(localStorage.getItem("language")) === 0 ? "Read me!" : "Citeste-ma!"}
+                        </button>
                         <button className='button' type="button" onClick={deleteProduct}>
                             {parseInt(localStorage.getItem("language")) === 0 ? "Delete Product" : "Elimina produs"}
-                        </button>
-                        <button className='button' type="button" onClick={updateProduct}>
-                            {parseInt(localStorage.getItem("language")) === 0 ? "Update Product" : "Actualizare produs"}
                         </button>
                     </div>
                 </div>
@@ -76,7 +57,7 @@ const Product = (props) => {
                 <p>{props.author}</p>
                 <div className='buttons'>
                     <button className='button' type="button"
-                            onClick={visitPage}>as
+                            onClick={visitPage}>{parseInt(localStorage.getItem("language")) === 0 ? "Read me!" : "Citeste-ma!"}
                     </button>
                 </div>
             </div>

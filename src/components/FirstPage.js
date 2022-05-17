@@ -8,6 +8,9 @@ const FirstPage = (props) => {
     const navigate = useNavigate()
     return (
         <div className="FirstPage">
+            <div className="imgLogo">
+                <img src="../logo.jpg" alt="Logo"/>
+            </div>
             <div className="img"><ReactComponent/></div>
             <div className="lander">
                 <h1>Online Library</h1>
