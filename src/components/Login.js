@@ -47,7 +47,7 @@ const Login = (props) => {
                     <form className="form" onSubmit={handleFormSubmit}>
                         <label>Username: <input required name="Username" onChange={e => setState({...state, username: e.target.value})} value={state.username}/></label>
                         <label>Password: <input required name="Password" type="password" onChange={e => setState({...state, password: e.target.value})} value={state.password}/></label>
-                        <button type="submit">Login</button>
+                        <button className="button" type="submit">Login</button>
                     </form>
                 </div>
             </div>

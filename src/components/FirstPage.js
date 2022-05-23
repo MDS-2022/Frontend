@@ -16,8 +16,8 @@ const FirstPage = (props) => {
                 <h1>Online Library</h1>
                 <p>A place for everybody who want knowledge</p>
                 <form>
-                    <button onClick={() => {navigate("/login");}}>Login</button>
-                    <button onClick={() => {navigate('register');}}>Register</button>
+                    <button className="button" onClick={() => {navigate("/login");}}>Login</button>
+                    <button className="button" onClick={() => {navigate('register');}}>Register</button>
                 </form>
             </div>
         </div>

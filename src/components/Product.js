@@ -39,10 +39,10 @@ const Product = (props) => {
                     <p>{props.name}</p>
                     <p>{props.author}</p>
                     <div className='buttons'>
-                        <button className='button' type="button"
+                        <button className="button" type="button"
                                 onClick={visitPage}>{parseInt(localStorage.getItem("language")) === 0 ? "Read me!" : "Citeste-ma!"}
                         </button>
-                        <button className='button' type="button" onClick={deleteProduct}>
+                        <button className="button" type="button" onClick={deleteProduct}>
                             {parseInt(localStorage.getItem("language")) === 0 ? "Delete Product" : "Elimina produs"}
                         </button>
                     </div>
@@ -56,7 +56,7 @@ const Product = (props) => {
                 <p>{props.name}</p>
                 <p>{props.author}</p>
                 <div className='buttons'>
-                    <button className='button' type="button"
+                    <button className="button" type="button"
                             onClick={visitPage}>{parseInt(localStorage.getItem("language")) === 0 ? "Read me!" : "Citeste-ma!"}
                     </button>
                 </div>

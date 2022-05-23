@@ -5,12 +5,41 @@
   right: 0;
   width: 100%;
 
+  .button{
+    margin-left: 1%;
+    background-color: #fbeee0;
+    border: 2px solid #422800;
+    border-radius: 30px;
+    box-shadow: #422800 4px 4px 0 0;
+    color: #422800;
+    cursor: pointer;
+    display: inline-block;
+    font-weight: 600;
+    font-size: 18px;
+    padding: 0 10px 0 ;
+    line-height: 50px;
+    text-align: center;
+    text-decoration: none;
+    user-select: none;
+    -webkit-user-select: none;
+    touch-action: manipulation;
+  }
+
+    .button:hover {
+      background-color: #fff !important;
+    }
+
+    .button:active {
+      box-shadow: #422800 2px 2px 0 0;
+      transform: translate(2px, 2px);
+    }
 
   @media screen and (min-width: 1330px) {
     .imgLogo{
       display: none;
     }
     .img {
+      padding-top: 10px;
       float: left;
       width: 50%;
     }
@@ -24,6 +53,11 @@
     .imgLogo{
       display: none;
     }
+
+    .button{
+      margin-left: 2%;
+    }
+
     .img {
       position: fixed;
       float: left;
@@ -52,6 +86,5 @@
       align-content: center;
     }
   }
-
 }
 

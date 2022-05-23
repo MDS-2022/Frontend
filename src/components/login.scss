@@ -8,7 +8,7 @@
   .login_form {
     display: flex;
     flex-direction: column;
-
+    justify-content: center;
     .Alt {
       text-align: right;
       font: normal normal bold 20px/24px Raleway;
@@ -91,6 +91,30 @@
       width: 93%;
       height: 80%;
     }
+  }
+  .button{
+    margin-left: 8%;
+    background-color: #fbeee0 !important;
+    border: 2px solid #422800;
+    border-radius: 30px !important;
+    box-shadow: #422800 4px 4px 0 0 !important;
+    color: #422800 !important;
+    cursor: pointer;
+    display: inline-block;
+    font-weight: 60 !important;
+    padding: 0 10px 0 ;
+    text-decoration: none;
+    -webkit-user-select: none;
+    touch-action: manipulation;
+  }
+
+  .button:hover {
+    background-color: #fff !important;
+  }
+
+  .button:active {
+    box-shadow: #422800 2px 2px 0 0;
+    transform: translate(2px, 2px);
   }
 }
 

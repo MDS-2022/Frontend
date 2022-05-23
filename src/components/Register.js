@@ -43,7 +43,7 @@ const Register = (props) => {
                     <label>Username: <input required name="Username" onChange={e => setState({...state, username: e.target.value})} value={state.username}/></label>
                     <label>Email: <input required name="Email" type="email" onChange={e => setState({...state, email: e.target.value})} value={state.email}/></label>
                     <label>Password: <input required name="Password" type="password" onChange={e => setState({...state, password: e.target.value})} value={state.password}/></label>
-                    <button type="submit">Register</button>
+                    <button className="button" type="submit">Register</button>
                 </form>
             </div>
         </div>
